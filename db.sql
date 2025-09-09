@@ -9,7 +9,7 @@ CREATE TABLE Cliente (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE,
     telefone VARCHAR(20)
 );
 
@@ -55,3 +55,17 @@ CREATE TABLE Agendamentos (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+INSERT INTO Cliente (nome, cpf, email) VALUES ('Rafael Almeida', '12345678911', 'rafa@gmail.com');
+
+-- ================================
+-- Tabela: Usuarios (para login)
+-- ================================
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+-- Inserir usuário de teste (senha: 123456)
+INSERT INTO Usuarios (username, senha) VALUES ('Rafael Almeida', '123456');
