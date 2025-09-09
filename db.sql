@@ -1,10 +1,6 @@
--- Criação do banco de dados
 CREATE DATABASE IF NOT EXISTS petshop_db;
 USE petshop_db;
 
--- ================================
--- Tabela: Cliente
--- ================================
 CREATE TABLE Cliente (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -13,9 +9,6 @@ CREATE TABLE Cliente (
     telefone VARCHAR(20)
 );
 
--- ================================
--- Tabela: Pets
--- ================================
 CREATE TABLE Pets (
     pet_id INT AUTO_INCREMENT PRIMARY KEY,
     cliente_id INT NOT NULL,
@@ -28,9 +21,6 @@ CREATE TABLE Pets (
         ON UPDATE CASCADE
 );
 
--- ================================
--- Tabela: Servicos
--- ================================
 CREATE TABLE Servicos (
     servico_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -38,9 +28,6 @@ CREATE TABLE Servicos (
     duracao_min INT NOT NULL
 );
 
--- ================================
--- Tabela: Agendamentos
--- ================================
 CREATE TABLE Agendamentos (
     agendamento_id INT AUTO_INCREMENT PRIMARY KEY,
     pet_id INT NOT NULL,
